@@ -18,7 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test', function (){
-    $name = "pippo";
-    return response()->json(compact('name'));
-});
+// API Route che permette di prelevare tutti i posts
+
+Route::get('/posts', 'Api\PostController@index');
