@@ -11,6 +11,9 @@
 
         {{-- Vue Script --}}
         <script src="{{ asset('js/front.js') }}" defer></script>
+
+        {{-- Style --}}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         
     </head>
     <body>

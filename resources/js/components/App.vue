@@ -1,20 +1,18 @@
 <template>
-    <div id="suspance">Coming soon...</div>
+    <AppHeader />
 </template>
 
 <script>
+import AppHeader from "./AppHeader.vue";
 export default {
     name: "App",
-    components: {},
+    components: {
+        AppHeader,
+    },
     data() {
         return {};
     },
 };
 </script>
 
-<style lang="scss" scoped>
-#suspance {
-    font-size: 50px;
-    text-align: center;
-}
-</style>
+<style lang="scss" scoped></style>
