@@ -1,17 +1,17 @@
 <template>
-    <section>
-        <div class="card mx-0">
+    <div class="card mb-4">
+        <figure class="m-0">
             <img
                 :src="post.image"
                 class="card-img-top img-fluid"
                 :alt="post.image"
             />
-            <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
-                <p class="card-text">{{ post.content }}</p>
-            </div>
+        </figure>
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
         </div>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -23,4 +23,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+    min-height: 300px;
+    width: 300px;
+    figure {
+        height: 200px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+</style>
