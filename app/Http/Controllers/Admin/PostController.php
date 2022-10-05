@@ -85,7 +85,8 @@ class PostController extends Controller
 
         $new_post->slug = Str::slug($new_post->title,'-');
 
-        if($data['is_published']) $new_post->is_published = true;
+        if(array_key_exists('is_published',$data)) $new_post->is_published = true;
+        else $new_post->is_published = false;
 
         $new_post->user_id = Auth::id();
 
