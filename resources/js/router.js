@@ -11,6 +11,8 @@ import ContactsPage from "./pages/ContactsPage.vue";
 import HomePage from "./pages/HomePage.vue";
 import NotFoundPage from "./pages/NotFoundPage.vue";
 
+// Usa vue-router
+
 Vue.use(VueRouter);
 
 // Definiamo le rotte
@@ -34,5 +36,7 @@ const routes = new VueRouter({
         { path: "*", component: NotFoundPage, name: "not_found" },
     ],
 });
+
+// Esporto solo l'oggetto fatto e finito
 
 export default routes;

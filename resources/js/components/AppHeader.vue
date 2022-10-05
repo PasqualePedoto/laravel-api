@@ -19,17 +19,24 @@
                         <li class="nav-item mr-4">
                             <router-link
                                 class="text-secondary"
+                                :to="{ name: 'posts' }"
+                                >Posts</router-link
+                            >
+                        </li>
+                        <li class="nav-item mr-4">
+                            <router-link
+                                class="text-secondary"
                                 :to="{ name: 'about' }"
                                 >About</router-link
                             >
                         </li>
-                        <!-- <li class="nav-item mr-4">
+                        <li class="nav-item mr-4">
                             <router-link
                                 class="text-secondary"
                                 :to="{ name: 'contacts' }"
                                 >Contacts</router-link
                             >
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </nav>
