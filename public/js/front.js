@@ -2330,8 +2330,19 @@ var render = function render() {
   })])], 1)]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
   }, [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("div", {
-    staticClass: "card-footer"
-  }, [_vm._v(_vm._s(_vm.post.title))])])]);
+    staticClass: "card-footer d-flex align-items-center justify-content-between"
+  }, [_c("p", {
+    staticClass: "d-flex align-items-center m-0"
+  }, [_vm._v("\n                " + _vm._s(_vm.post.author.name) + "\n            ")]), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "btn btn-secondary",
+    on: {
+      click: function click($event) {
+        return _vm.$router.back();
+      }
+    }
+  }, [_c("i", {
+    staticClass: "fa-solid fa-arrow-rotate-left"
+  })])])])])]);
 };
 
 var staticRenderFns = [];

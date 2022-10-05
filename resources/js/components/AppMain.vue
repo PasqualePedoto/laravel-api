@@ -1,11 +1,7 @@
 <template>
     <section id="main" class="container">
         <main class="mt-5">
-            <div class="block-spinner" v-if="isLoading">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
+            <AppLoader v-if="isLoading" />
             <div v-else>
                 <div v-if="posts.length">
                     <h1>Posts</h1>
@@ -28,9 +24,10 @@
 <script>
 import Axios from "axios";
 import PostCard from "./PostCard.vue";
+import AppLoader from "./AppLoader.vue";
 export default {
     name: "AppMain",
-    components: { PostCard },
+    components: { PostCard, AppLoader },
     data() {
         return {
             posts: [],
@@ -59,25 +56,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.block-spinner {
-    position: fixed;
-
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
-    background-color: transparent;
-    filter: opacity(0.2);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .spinner-border {
-        width: 300px;
-        height: 300px;
-    }
-}
-</style>
+<style lang="scss" scoped></style>

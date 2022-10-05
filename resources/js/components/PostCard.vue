@@ -24,7 +24,18 @@
                 </div>
             </div>
             <p class="card-text">{{ post.content }}</p>
-            <div class="card-footer">{{ post.title }}</div>
+            <div
+                class="card-footer d-flex align-items-center justify-content-between"
+            >
+                <p class="d-flex align-items-center m-0">
+                    {{ post.author.name }}
+                </p>
+                <div>
+                    <button class="btn btn-secondary" @click="$router.back()">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
