@@ -16,9 +16,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Posts</a>
+                        <li class="nav-item mr-4">
+                            <router-link
+                                class="text-secondary"
+                                :to="{ name: 'about' }"
+                                >About</router-link
+                            >
                         </li>
+                        <!-- <li class="nav-item mr-4">
+                            <router-link
+                                class="text-secondary"
+                                :to="{ name: 'contacts' }"
+                                >Contacts</router-link
+                            >
+                        </li> -->
                     </ul>
                 </div>
             </nav>
