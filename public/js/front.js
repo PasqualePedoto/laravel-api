@@ -2055,10 +2055,8 @@ var staticRenderFns = [function () {
     attrs: {
       id: "header"
     }
-  }, [_c("header", {
-    staticClass: "container"
-  }, [_c("nav", {
-    staticClass: "navbar navbar-expand-lg navbar-light bg-light"
+  }, [_c("header", [_c("nav", {
+    staticClass: "navbar navbar-expand-lg navbar-dark bg-dark"
   }, [_c("a", {
     staticClass: "navbar-brand",
     attrs: {
@@ -2163,9 +2161,9 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card mb-4"
+    staticClass: "mb-4 d-flex flex-row post-card"
   }, [_c("figure", {
-    staticClass: "m-0"
+    staticClass: "m-0 h-100"
   }, [_c("img", {
     staticClass: "card-img-top img-fluid",
     attrs: {
@@ -2173,12 +2171,14 @@ var render = function render() {
       alt: _vm.post.image
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title"
+    staticClass: "flex-grow-1"
+  }, [_c("div", {
+    staticClass: "card-header"
   }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v(_vm._s(_vm.post.content))])])]);
+  }, [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("div", {
+    staticClass: "card-footer"
+  }, [_vm._v(_vm._s(_vm.post.title))])])]);
 };
 
 var staticRenderFns = [];
@@ -6584,7 +6584,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-1324358a] {\n  min-height: 300px;\n  width: 300px;\n}\n.card figure[data-v-1324358a] {\n  height: 200px;\n}\n.card figure img[data-v-1324358a] {\n  width: 100%;\n  height: 100%;\n}", ""]);
+exports.push([module.i, ".post-card[data-v-1324358a] {\n  width: 100%;\n  height: 300px;\n}\n.post-card figure[data-v-1324358a] {\n  width: 40%;\n}", ""]);
 
 // exports
 

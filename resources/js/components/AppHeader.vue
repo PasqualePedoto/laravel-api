@@ -1,7 +1,7 @@
 <template>
     <section id="header">
-        <header class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Bollpress</a>
                 <button
                     class="navbar-toggler"

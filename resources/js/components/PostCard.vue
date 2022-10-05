@@ -1,15 +1,16 @@
 <template>
-    <div class="card mb-4">
-        <figure class="m-0">
+    <div class="mb-4 d-flex flex-row post-card">
+        <figure class="m-0 h-100">
             <img
                 :src="post.image"
                 class="card-img-top img-fluid"
                 :alt="post.image"
             />
         </figure>
-        <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
+        <div class="flex-grow-1">
+            <div class="card-header">{{ post.title }}</div>
             <p class="card-text">{{ post.content }}</p>
+            <div class="card-footer">{{ post.title }}</div>
         </div>
     </div>
 </template>
@@ -24,16 +25,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
-    min-height: 300px;
-    width: 300px;
-    figure {
-        height: 200px;
+.post-card {
+    width: 100%;
+    height: 300px;
 
-        img {
-            width: 100%;
-            height: 100%;
-        }
+    figure {
+        width: 40%;
     }
 }
 </style>
