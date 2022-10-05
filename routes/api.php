@@ -20,4 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // API Route che permette di prelevare tutti i posts
 
-Route::get('/posts', 'Api\PostController@index');
+Route::namespace('Api')->group( function () {
+
+    Route::get('/posts', 'PostController@index');
+    Route::get('/posts/{slug}', 'PostController@show');     
+
+});
+
