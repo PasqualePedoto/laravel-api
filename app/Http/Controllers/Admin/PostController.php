@@ -134,7 +134,8 @@ class PostController extends Controller
         $request->validate([
             'title' => ['required','string',Rule::unique('posts')->ignore($post->id)],
             'content' => 'nullable|string',
-            'image' => 'nullable'
+            'image' => 'nullable',
+            'is_published' => 'boolean'
         ],[
             'title.required' => 'Il titolo è un campo obbligatorio',
             'title.string' => 'Il titolo deve essere composta da caratteri',
@@ -144,6 +145,9 @@ class PostController extends Controller
         $data = $request->all();
 
         if(array_key_exists('my_post',$data)) $post->user_id = Auth::id();
+
+        if(array_key_exists('is_published',$data)) $post->is_published = true;
+        else $post->is_published = false;
 
         if(array_key_exists('tags',$data)){
             $post->tags()->sync($data['tags']);
