@@ -10,6 +10,7 @@ import AboutPage from "./pages/AboutPage.vue";
 import ContactsPage from "./pages/ContactsPage.vue";
 import HomePage from "./pages/HomePage.vue";
 import NotFoundPage from "./pages/NotFoundPage.vue";
+import PostDetailsPage from "./pages/PostDetailsPage.vue";
 
 // Usa vue-router
 
@@ -30,6 +31,11 @@ const routes = new VueRouter({
         { path: "/posts", component: PostsPage, name: "posts" },
         { path: "/about", component: AboutPage, name: "about" },
         { path: "/contacts", component: ContactsPage, name: "contacts" },
+        {
+            path: "/posts/:slug",
+            component: PostDetailsPage,
+            name: "post-detail",
+        },
 
         // ! Rotta da mettere sempre dopo le altre
 

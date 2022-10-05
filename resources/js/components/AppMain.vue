@@ -1,6 +1,6 @@
 <template>
     <section id="main" class="container">
-        <main>
+        <main class="mt-5">
             <div class="block-spinner" v-if="isLoading">
                 <div class="spinner-border text-primary" role="status">
                     <span class="sr-only">Loading...</span>

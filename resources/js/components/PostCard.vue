@@ -8,7 +8,21 @@
             />
         </figure>
         <div class="flex-grow-1">
-            <div class="card-header">{{ post.title }}</div>
+            <div
+                class="card-header d-flex align-items-center justify-content-between"
+            >
+                <p class="d-flex align-items-center m-0">{{ post.title }}</p>
+                <div>
+                    <router-link
+                        class="btn btn-primary"
+                        :to="{
+                            name: 'post-detail',
+                            params: { slug: post.slug },
+                        }"
+                        ><i class="fa-solid fa-eye"></i
+                    ></router-link>
+                </div>
+            </div>
             <p class="card-text">{{ post.content }}</p>
             <div class="card-footer">{{ post.title }}</div>
         </div>
