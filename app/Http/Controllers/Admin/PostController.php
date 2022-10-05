@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Support\Str;
+
 class PostController extends Controller
 {
     /**
@@ -63,10 +65,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string',
+            'title' => 'required|string|unique:posts',
             'content' => 'nullable|string',
             'image' => 'nullable|url',
             'tags' => 'nullable|exists:tags,id',
+            'is_published' => 'boolean'
         ],[
             'title.required' => 'Il titolo è un campo obbligatorio',
             'title.string' => 'Il titolo deve essere composta da caratteri',
@@ -79,6 +82,10 @@ class PostController extends Controller
         $new_post = new Post();
 
         $new_post->fill($data);
+
+        $new_post->slug = Str::slug($new_post->title,'-');
+
+        if($data['is_published']) $new_post->is_published = true;
 
         $new_post->user_id = Auth::id();
 

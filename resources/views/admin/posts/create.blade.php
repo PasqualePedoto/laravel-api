@@ -59,6 +59,19 @@
                     @endforelse
                 </div>
 
+                {{-- Is Published --}}
+                <div class="form-group col-6">
+                    <label for="is_published" class="mr-4">Pubblicato</label>
+                    <input 
+                        name="is_published" 
+                        type="checkbox" 
+                        class="form-check-input" 
+                        id="is_published" 
+                        value="1"
+                        @if($post->is_published) checked @endif
+                        >
+                </div>
+
                 {{-- Button --}}
                 <div class="form-group col-6 d-flex align-items-end justify-content-end">
                     <button class="btn btn-success" type="submit">
