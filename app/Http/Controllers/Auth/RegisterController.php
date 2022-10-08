@@ -75,7 +75,7 @@ class RegisterController extends Controller
 
         $details = new UserDetail();
 
-        $details->user_id = Auth::id();
+        $details->user_id = $user->id;
 
         $details->save();
 

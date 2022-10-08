@@ -34,7 +34,9 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
 
     // Tutte le rotte per gli utenti
 
-    Route::get('/users','UserController@index')->name('users.index');
+    // Route::get('/users','UserController@index')->name('users.index');
+
+    Route::resource('users','UserController');
     
     // Rotta per l'edit del profilo
 

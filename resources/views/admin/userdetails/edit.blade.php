@@ -24,7 +24,7 @@
                 {{-- Address --}}
                 <div class="form-group col-6">
                     <label for="address">Indirizzo</label>
-                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address',$details->address) }}">
+                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address',$details->address)}}">
                 </div>
                 {{-- Button --}}
                 <div class="form-group col-6">
