@@ -41,6 +41,16 @@
                     @endif
                 @endif
 
+                {{-- Category --}}
+                <div class="form-group col-6">
+                    <select name="category_id" class="custom-select" id="category_id" aria-label="Example select with button addon">
+                        <option value="">Tutte le categorie</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" for="category_id">{{ $category->label }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 {{-- Tags --}}
                 <div class="form-group col-6">
                     <h5>Tag</h5>

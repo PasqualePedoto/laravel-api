@@ -22,6 +22,7 @@
                       <small class="text-muted">
                         <div>{{ $post->created_at }}</div>
                         <div>{{ $post->updated_at }}</div>
+                        <div>Category: {{ $post->category->label }}</div>
                       </small>
                       <div>Autore: {{ $post->author->name }}</div>
                     </p>

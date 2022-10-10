@@ -52,8 +52,9 @@ class PostController extends Controller
     {
         $post = new Post();
         $tags = Tag::select('id','label')->get();
+        $categories = Category::all();
 
-        return view('admin.posts.create',compact('post','tags'));
+        return view('admin.posts.create',compact('post','tags','categories'));
     }
 
     /**
@@ -84,6 +85,8 @@ class PostController extends Controller
         $new_post->fill($data);
 
         $new_post->slug = Str::slug($new_post->title,'-');
+
+        if(array_key_exists('category_id',$data)) $new_post->category_id = $data['category_id'];
 
         if(array_key_exists('is_published',$data)) $new_post->is_published = true;
         else $new_post->is_published = false;
@@ -118,8 +121,9 @@ class PostController extends Controller
     {
         $tags = Tag::select('id','label')->get();
         $prev_tags = $post->tags->pluck('id')->toArray();
+        $categories = Category::all();
 
-        return view('admin.posts.create',compact('post','tags','prev_tags'));
+        return view('admin.posts.create',compact('post','tags','prev_tags','categories'));
     }
 
     /**
@@ -145,6 +149,8 @@ class PostController extends Controller
         $data = $request->all();
 
         if(array_key_exists('my_post',$data)) $post->user_id = Auth::id();
+
+        if(array_key_exists('category_id',$data)) $post->category_id = $data['category_id'];
 
         if(array_key_exists('is_published',$data)) $post->is_published = true;
         else $post->is_published = false;
